@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>Student Registration Form</title>
+	<style>
+		.error{
+			color:red;
+		}
+	</style>
+</h:head>
+
+<h:body>
+	<h:form>
+
+<!-- 		<h:messages styleClass="error"> -->
+
+<!-- 		</h:messages> -->
+	
+		First name: <h:inputText 
+								label="First name" 
+								value="#{studentTwo.firstName}"
+					/>
+
+		<br />
+		<br />
+		
+		Last name: <h:inputText 
+								label="Last name"
+								value="#{studentTwo.lastName}"
+					/>
+
+
+		<br />
+		<br />
+		
+		Free Passes: <h:inputText 
+								label="Last name"
+								value="#{studentTwo.freePasses}"
+								id="free_passes"
+					>
+						<f:validateLongRange minimum="0" maximum="10"/>
+					</h:inputText>
+					<h:message for="free_passes" styleClass="error"/>
+		<br />
+		<br />
+		
+		
+		Postal Code: <h:inputText 
+							label="Postal Code" 
+							value="#{studentTwo.postalCode}"
+							id="postal_code" >
+						<f:validateLength minimum="5" maximum="5"/>
+					</h:inputText>
+			
+		<h:message for="postal_code" styleClass="error"/>
+
+		<br />
+		<br />
+
+
+
+		<h:commandButton value="Submit" action="student_two_response" />
+
+
+	</h:form>
+</h:body>
+
+</html>
